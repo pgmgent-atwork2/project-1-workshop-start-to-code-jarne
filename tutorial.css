@@ -15,6 +15,14 @@ body {
   padding: 0;
 }
 
+a {
+  color: #75f87b;
+}
+
+a:hover {
+  color: #00ff0d;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
