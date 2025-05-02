@@ -5,6 +5,7 @@
 Een volledig werkend Tic Tac Toe (Boter-kaas-en-eieren) spel gebouwd met HTML, CSS en JavaScript. Perfect voor beginners om web development concepten te leren!
 
 ![Game Screenshot](/assets/image.png)
+
 [Game URL](https://pgmgent-atwork2.github.io/project-1-workshop-start-to-code-jarne/)
 
 ## 🌟 Features

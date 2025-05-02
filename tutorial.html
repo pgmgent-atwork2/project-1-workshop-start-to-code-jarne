@@ -13,25 +13,59 @@
 <body>
     <div class="container">
         <header>
-            <h1><a href="tool.html">Tic Tac Toe</a> Game Tutorial</h1>
-            <p>Learn how to build this classic game with HTML, CSS, and JavaScript</p>
+            <h1><a target="_blank" href="index.html">Tic Tac Toe</a> Game Tutorial</h1>
+            <p>Leer hoe je dit klassieke spel maakt met HTML, CSS en JavaScript</p>
         </header>
 
         <section class="tutorial-section">
-            <h2>Introduction</h2>
-            <p>This tutorial will walk you through creating a Tic Tac Toe game from scratch. We'll cover:</p>
+            <h2>🚀 Aan de slag</h2>
+            <p>Volg deze stappen om je ontwikkelomgeving klaar te maken:</p>
+
+            <h3>1. Projectmap aanmaken</h3>
+            <ol>
+                <li>Open <strong>Verkenner</strong> (Windows + E)</li>
+                <li>Navigeer naar waar je je project wilt opslaan (bv. Documenten)</li>
+                <li>Klik met rechts → Nieuw → Map</li>
+                <li>Geef de map een naam zoals "tic-tac-toe"</li>
+            </ol>
+
+            <h3>2. Bestanden aanmaken</h3>
+            <ol>
+                <li>Open de nieuwe map in Verkenner</li>
+                <li>Klik met rechts → Nieuw → Tekstdocument</li>
+                <li>Hernoem het bestand naar <code>index.html</code></li>
+                <li>Herhaal dit voor <code>style.css</code> en <code>script.js</code></li>
+                <li>Klik "Ja" als Windows waarschuwt over de bestandsextensie</li>
+            </ol>
+
+            <h3>3. Openen in VSCode</h3>
+            <ol>
+                <li>Open Visual Studio Code</li>
+                <li>Klik op "Bestand" → "Map openen"</li>
+                <li>Selecteer je "tic-tac-toe" map</li>
+                <li>Je ziet nu je bestanden in de linker sidebar</li>
+            </ol>
+
+            <div class="note">
+                <strong>Tip:</strong> Dubbelklik op een bestand in VSCode om het te bewerken.
+            </div>
+        </section>
+
+        <section class="tutorial-section">
+            <h2>Inleiding</h2>
+            <p>Deze handleiding laat je stap voor stap zien hoe je Tic Tac Toe maakt:</p>
             <ul>
-                <li>The HTML structure for the game board</li>
-                <li>CSS styling to make it visually appealing</li>
-                <li>JavaScript game logic for player turns and win detection</li>
+                <li>De HTML-structuur voor het speelbord</li>
+                <li>CSS-opmaak voor een aantrekkelijk design</li>
+                <li>JavaScript voor de spelregels en logica</li>
             </ul>
 
             <div class="game-preview">
                 <div class="demo-game">
-                    <h3 style="text-align: center; color: var(--secondary);">Game Preview</h3>
+                    <h3 style="text-align: center; color: var(--secondary);">Voorbeeld van het spel</h3>
                     <div class="status">
-                        <div class="status-text">Current Player: <span id="current-player">X</span></div>
-                        <div class="status-text winner">Winner: <span id="winner"></span></div>
+                        <div class="status-text">Huidige speler: <span id="current-player">X</span></div>
+                        <div class="status-text winner">Winnaar: <span id="winner"></span></div>
                     </div>
                     <div class="board">
                         <div class="row">
@@ -51,17 +85,17 @@
                         </div>
                     </div>
                     <div class="btns">
-                        <button class="reset-button">Reset</button>
+                        <button class="reset-button">Opnieuw</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="tutorial-section">
-            <h2>HTML Structure</h2>
-            <p>The HTML provides the basic structure of our game:</p>
+            <h2>HTML Structuur</h2>
+            <p>De HTML vormt de basis van ons spel:</p>
             <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="nl"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
@@ -72,8 +106,8 @@
     &lt;div class="container"&gt;
         &lt;h1&gt;Tic Tac Toe&lt;/h1&gt;
         &lt;div class="status"&gt;
-            &lt;div class="status-text"&gt;Current Player: &lt;span id="current-player"&gt;X&lt;/span&gt;&lt;/div&gt;
-            &lt;div class="status-text winner"&gt;Winner: &lt;span id="winner"&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="status-text"&gt;Huidige speler: &lt;span id="current-player"&gt;X&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="status-text winner"&gt;Winnaar: &lt;span id="winner"&gt;&lt;/span&gt;&lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="board"&gt;
             &lt;div class="row"&gt;
@@ -94,7 +128,7 @@
         &lt;/div&gt;
 
         &lt;div class="btns"&gt;
-            &lt;button class="reset-button"&gt;Reset&lt;/button&gt;
+            &lt;button class="reset-button"&gt;Opnieuw&lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
@@ -102,102 +136,101 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-            <h3>Key Elements:</h3>
+            <h3>Belangrijke onderdelen:</h3>
             <ul>
-                <li><strong>Board</strong>: A 3x3 grid created with div elements</li>
-                <li><strong>Status display</strong>: Shows current player and winner</li>
-                <li><strong>Reset button</strong>: Allows starting a new game</li>
+                <li><strong>Bord</strong>: Een 3×3 grid gemaakt met div-elementen</li>
+                <li><strong>Statusbalk</strong>: Toont de huidige speler en winnaar</li>
+                <li><strong>Resetknop</strong>: Start een nieuw spel</li>
             </ul>
         </section>
 
         <section class="tutorial-section">
-            <h2>CSS Styling</h2>
-            <p>The CSS makes our game visually appealing:</p>
+            <h2>CSS Opmaak</h2>
+            <p>Met CSS maken we het spel visueel aantrekkelijk:</p>
             <pre><code class="language-css">body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #2e2e2e;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .board {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
-  background-color: #fff897;
-  border: 2px solid #000000;
-  color: #000000;
-  border-radius: 10px;
-  display: flex;
-  margin: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 100px;
+    height: 100px;
+    background-color: #fff897;
+    border: 2px solid #000000;
+    color: #000000;
+    border-radius: 10px;
+    display: flex;
+    margin: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .cell:hover {
-  background-color: #00ff0d;
+    background-color: #00ff0d;
 }
 
 .status {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .reset-button {
-  margin: 2rem;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    margin: 2rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .reset-button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .winner {
-  display: none;
+    display: none;
 }</code></pre>
 
-            <h3>Key Features:</h3>
+            <h3>Belangrijke kenmerken:</h3>
             <ul>
-                <li><strong>Grid layout</strong>: Uses CSS Grid for the game board</li>
-                <li><strong>Hover effects</strong>: Visual feedback when hovering cells</li>
-                <li><strong>Responsive</strong>: Centers the game on the page</li>
-                <li><strong>Visual hierarchy</strong>: Clear styling for different elements</li>
+                <li><strong>Grid layout</strong>: CSS Grid voor het speelbord</li>
+                <li><strong>Hover effecten</strong>: Visuele feedback bij muisover</li>
+                <li><strong>Responsief</strong>: Werkt op verschillende schermen</li>
             </ul>
         </section>
 
         <section class="tutorial-section">
-            <h2>JavaScript Game Logic</h2>
-            <p>The JavaScript handles all the game mechanics:</p>
+            <h2>JavaScript Spellogica</h2>
+            <p>JavaScript regelt alle spelmechanismen:</p>
             <pre><code class="language-javascript">const cells = document.querySelectorAll(".cell");
 const currentPlayerSpan = document.getElementById("current-player");
 const winnerSpan = document.getElementById("winner");
@@ -208,87 +241,81 @@ let currentPlayer = "X";
 let board = ["", "", "", "", "", "", "", "", ""];
 let gameActive = true;
 
-// Winning combinations
+// Winnende combinaties
 const winningCombinations = [
-  [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-  [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-  [0, 4, 8], [2, 4, 6]             // diagonals
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // rijen
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // kolommen
+    [0, 4, 8], [2, 4, 6]             // diagonalen
 ];
 
-// Handle cell click
+// Celklik afhandelen
 function handleCellClick(event) {
-  const cell = event.target;
-  const cellIndex = Array.from(cells).indexOf(cell);
+    const cell = event.target;
+    const cellIndex = Array.from(cells).indexOf(cell);
 
-  if (board[cellIndex] !== "" || !gameActive) return;
+    if (board[cellIndex] !== "" || !gameActive) return;
 
-  board[cellIndex] = currentPlayer;
-  cell.textContent = currentPlayer;
+    board[cellIndex] = currentPlayer;
+    cell.textContent = currentPlayer;
 
-  if (checkWinner()) {
-    gameActive = false;
-    winnerSpan.textContent = currentPlayer;
-    winnerText.style.display = "block";
-    return;
-  }
+    if (checkWinner()) {
+        gameActive = false;
+        winnerSpan.textContent = currentPlayer;
+        winnerText.style.display = "block";
+        return;
+    }
 
-  if (board.every((cell) => cell !== "")) {
-    gameActive = false;
-    winnerSpan.textContent = "Draw";
-    winnerText.style.display = "block";
-    return;
-  }
+    if (board.every((cell) => cell !== "")) {
+        gameActive = false;
+        winnerSpan.textContent = "Gelijkspel";
+        winnerText.style.display = "block";
+        return;
+    }
 
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
-  currentPlayerSpan.textContent = currentPlayer;
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    currentPlayerSpan.textContent = currentPlayer;
 }
 
-// Check for a winner
+// Winnaar controleren
 function checkWinner() {
-  return winningCombinations.some((combination) => {
-    return combination.every((index) => board[index] === currentPlayer);
-  });
+    return winningCombinations.some((combination) => {
+        return combination.every((index) => board[index] === currentPlayer);
+    });
 }
 
-// Reset the game
+// Spel resetten
 function resetGame() {
-  board = ["", "", "", "", "", "", "", "", ""];
-  gameActive = true;
-  currentPlayer = "X";
-  currentPlayerSpan.textContent = currentPlayer;
-  winnerSpan.textContent = "";
-  winnerText.style.display = "none";
-  cells.forEach((cell) => (cell.textContent = ""));
+    board = ["", "", "", "", "", "", "", "", ""];
+    gameActive = true;
+    currentPlayer = "X";
+    currentPlayerSpan.textContent = currentPlayer;
+    winnerSpan.textContent = "";
+    winnerText.style.display = "none";
+    cells.forEach((cell) => (cell.textContent = ""));
 }
 
 // Event listeners
 cells.forEach((cell) => cell.addEventListener("click", handleCellClick));
 resetButton.addEventListener("click", resetGame);</code></pre>
 
-            <h3>Key Components:</h3>
+            <h3>Belangrijke onderdelen:</h3>
             <ul>
-                <li><strong>Game state</strong>: Tracks current player and board positions</li>
-                <li><strong>Win detection</strong>: Checks all possible winning combinations</li>
-                <li><strong>Turn management</strong>: Alternates between X and O players</li>
-                <li><strong>Event handling</strong>: Responds to cell clicks and reset button</li>
+                <li><strong>Spelstatus</strong>: Volgt de huidige speler en bord</li>
+                <li><strong>Wincontrole</strong>: Checkt alle winnende combinaties</li>
+                <li><strong>Beurtwissel</strong>: Wisselt tussen X en O</li>
             </ul>
         </section>
 
         <section class="tutorial-section">
-            <h2>Conclusion</h2>
-            <p>You've now seen how to build a complete Tic Tac Toe game with:</p>
-            <ol>
-                <li>A clean HTML structure for the game board</li>
-                <li>CSS styling that makes the game visually appealing</li>
-                <li>JavaScript that handles all the game logic</li>
-            </ol>
+            <h2>Conclusie</h2>
+            <p>Je hebt nu geleerd hoe je een volledig werkend Tic Tac Toe spel maakt!</p>
 
-            <h3>Next Steps</h3>
+            <h3>Vervolgstappen</h3>
             <ul>
-                <li>Try adding a score counter to track wins</li>
-                <li>Implement a simple AI opponent</li>
-                <li>Add animations for placing marks and winning</li>
-                <li>Make the game responsive for mobile devices</li>
+                <li>Voeg een scorebord toe</li>
+                <li>Maak een computertegenstander</li>
+                <li>Voeg animaties toe</li>
+                <li>Maak het geschikt voor mobiel</li>
             </ul>
         </section>
     </div>
